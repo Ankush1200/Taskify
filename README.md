@@ -15,19 +15,12 @@ Taskify is a powerful and intuitive task management application designed to help
 - **Seamless integration with state management using TaskProvider.**
 - **Persistent storage using SharedPreferences to ensure data is saved even when the app is closed.**
 
-## Screenshots
-<div style=align-items: center;>
-  <img width=200px height=450px src="screenshots/1.jpg">
-  <img width=200px height=450px src="screenshots/2.jpg">
-  <img width=200px height=450px src="screenshots/3.jpg">
-  <img width=200px height=450px src="screenshots/4.jpg">
-</div>
 
 ## Installation
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Ankush1200/employee_details.git
+   git clone https://github.com/Ankush1200/Taskify.git
 
 2. **Install dependencies**
    ```bash
