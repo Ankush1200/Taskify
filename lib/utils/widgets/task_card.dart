@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/models/task.dart';
@@ -40,7 +41,7 @@ class _TaskCardState extends State<TaskCard> {
                 : Colors.red;
   }
 
-  void _showUpdateTaskBottomModalSheet(int index) {
+  void _showUpdateTaskBottomModalSheet(int index,) {
     showModalBottomSheet(
       isScrollControlled: true,
       constraints: const BoxConstraints(
@@ -48,7 +49,11 @@ class _TaskCardState extends State<TaskCard> {
       ),
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (context) => UpdateTaskModalBottomSheet(index:index),
+      builder: (context) => UpdateTaskModalBottomSheet(
+        index:index,
+        title: widget.task.title,
+        description: widget.task.description,
+        ),
     );
   }
 
@@ -166,7 +171,7 @@ class _TaskCardState extends State<TaskCard> {
                           const VerticalDivider(),
                           GestureDetector(
                             onTap: () {
-                              _showUpdateTaskBottomModalSheet(widget.index);               
+                              _showUpdateTaskBottomModalSheet(widget.index,);               
                             },
                             child: const Icon(
                               Icons.edit,

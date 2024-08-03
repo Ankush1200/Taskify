@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
         ),
         appBar: AppBar(
           title:  Text(
-            "Your Todos©",
+            "Your Todo's",
             style: GoogleFonts.mooli(
                 color: Colors.black,
                 fontSize:20,

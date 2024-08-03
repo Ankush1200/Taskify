@@ -7,7 +7,12 @@ import 'package:todo/providers/task_provider.dart';
 // ignore: must_be_immutable
 class UpdateTaskModalBottomSheet extends StatefulWidget {
   int index;
-  UpdateTaskModalBottomSheet({super.key,required this.index});
+  String title;
+  String description;
+  UpdateTaskModalBottomSheet({super.key,
+  required this.title,
+  required this.description,
+  required this.index});
 
   @override
   State<UpdateTaskModalBottomSheet> createState() =>
@@ -19,6 +24,13 @@ class UpdateTaskModalBottomSheetState extends State<UpdateTaskModalBottomSheet> 
   final TextEditingController _updateDescriptionController =TextEditingController();
   TaskPriority _selectedPriority = TaskPriority.low;
 
+  @override
+  void initState(){
+    super.initState();
+    _updateTitleController.text=widget.title;
+    _updateDescriptionController.text=widget.description;
+
+  }
   Task _updateTask() {
     Task task = Task(
       title: _updateTitleController.text,
